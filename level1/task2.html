@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cognifyz Task 2 - JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 40px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            margin: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 10px;
+            width: 150px;
+            margin: 5px;
+        }
+
+        .calculator {
+            background: white;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Tasks</h1>
+
+    <!-- Part 1: Button Color Change -->
+    <button onclick="changeColor()" id="colorBtn">
+        Change My Color
+    </button>
+
+    <!-- Part 2: Greeting Alert -->
+    <button onclick="showGreeting()">
+        Show Greeting
+    </button>
+
+    <!-- Part 3: Calculator -->
+    <div class="calculator">
+        <h2>Simple Calculator</h2>
+        <input type="number" id="num1" placeholder="Number 1">
+        <input type="number" id="num2" placeholder="Number 2"><br>
+        <button onclick="addNumbers()">Add</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function changeColor() {
+            document.getElementById("colorBtn").style.backgroundColor = "green";
+        }
+
+        function showGreeting() {
+            const hour = new Date().getHours();
+            let message;
+
+            if (hour < 12) {
+                message = "Good Morning!";
+            } else if (hour < 18) {
+                message = "Good Afternoon!";
+            } else {
+                message = "Good Evening!";
+            }
+
+            alert(message);
+        }
+
+        function addNumbers() {
+            const n1 = Number(document.getElementById("num1").value);
+            const n2 = Number(document.getElementById("num2").value);
+            const sum = n1 + n2;
+
+            document.getElementById("result").innerText =
+                "Result: " + sum;
+        }
+    </script>
+
+</body>
+</html>
